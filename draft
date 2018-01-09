@@ -1,0 +1,12 @@
+import numpy 
+from numpy import * 
+import firstTime
+
+trainData, trainLabel = firstTime.loadDataSet('C:\Users\WEI\workspace\digitstrain.txt')
+V = trainData[100:200]
+V = mat(V).T
+
+c,b1,b2,W1,W2,sampleV,sampleH1,sampleH2 = firstTime.Initialize(7,100,100,100) 
+u1,u2 = firstTime.varInference(7,100,100,W1,W2,b1,b2,c,V)
+sampleV, sampleH1, sampleH2 = firstTime. MCMC(7,W1,W2,b1,b2,c,sampleV,sampleH1,sampleH2)
+p_data = reconProb(s,W1,W2,b1,b2,c,V.T,100)
