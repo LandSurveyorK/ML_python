@@ -1,0 +1,3 @@
+GWashington 83
+Pittsburgh 95
+NewYork 92
